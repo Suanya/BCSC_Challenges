@@ -6,12 +6,9 @@ public class PointMovement : MonoBehaviour
 {
     public GameObject[] checkPoints; // array of gameobjects, the cube will be attracted to
     int current = 0; // shows which checkPoint we're currently heading to
-    public float speed; // indicates how fast the cube is moving
+    public float[] speed; // indicates how fast the cube is moving
     float CPradius = 1; // if cube is in this radius, it knows it's there (in case we use emtpy space instead of trees)
-
-    Rigidbody rb; // in order to put velocity the cube needs a rb (gravity turned off)
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +27,6 @@ public class PointMovement : MonoBehaviour
             }
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, checkPoints[current].transform.position, Time.deltaTime * speed); // moves the object from the current position to the target position in a specific speed
-       
-
-
-        
+        transform.position = Vector3.MoveTowards(transform.position, checkPoints[current].transform.position, Time.deltaTime * speed[current]); // moves the object from the current position to the target position in a specific speed      
     }
 }
