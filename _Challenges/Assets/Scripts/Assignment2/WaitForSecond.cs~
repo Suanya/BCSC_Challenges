@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WaitForSecond : MonoBehaviour
+{
+    private IEnumerator coroutine;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        print("Starting" + Time.time + " seconds");
+
+        // Start function WaitAndPrint as a coroutine
+        coroutine = WaitAndPrint(3.0f);
+        StartCoroutine(coroutine);
+
+        print("Coroutine started");
+    }
+
+
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        print("Coroutine ended: " + Time.time + "seconds");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

@@ -8,7 +8,7 @@ public class Pythagoras : MonoBehaviour
     private void Start()
     {
         // HypotenuseLength(2, 5);
-        Debug.Log(HypotenuseLength(2,5));
+        Debug.Log(HypotenuseLength(3,4));
     }
   
     private void Update()
