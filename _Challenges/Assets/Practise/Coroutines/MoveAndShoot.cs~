@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// * turn in a specific angle
+/// * move to a specific point
+/// * wait 1 second, then fire up
+/// </summary>
+
+public class MoveAndShoot : MonoBehaviour
+{
+    IEnumerator MyCoroutine()
+    {
+        int i = 0;
+        while (i < 10)
+        {
+            // count to ten
+            i++;
+            yield return null;            
+        }
+        while (i > 0)
+        {
+            // count back to zero
+            i--;
+            yield return null;
+        }
+    }
+}

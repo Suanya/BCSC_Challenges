@@ -35,17 +35,5 @@ public class MinMaxArray : MonoBehaviour
         Debug.Log(max);
     }
     
-    /*
-    IEnumerator ArrayCoroutine()
-    {
-        // print time when function is first called
-        Debug.Log("Started ArrayCoroutine at timestamp : " + Time.time);
-
-        // yield on a new YieldInstruction that waits for 3 seconds
-        yield return new WaitForSeconds(3);
-
-        //After we've waited 3 seconds, print time again
-        Debug.Log("Finished ArrayCoroutine at timestamp : " + Time.time);
-    }
-    */
+   
 }
