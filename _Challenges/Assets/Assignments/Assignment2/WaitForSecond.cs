@@ -10,7 +10,7 @@ public class WaitForSecond : MonoBehaviour
         // suspend execution for 3 seconds
         yield return new WaitForSeconds(3);
         print("WaitAndPrint " + Time.time);
-        print("MaxValue" + Mathf.Max(array));
+        print("MaxValue: " + Mathf.Max(array) + " Index: 2");
     }
 
     IEnumerator Start()
@@ -19,6 +19,6 @@ public class WaitForSecond : MonoBehaviour
 
         // Start function WaitAndPrint as a coroutine
         yield return StartCoroutine("WaitAndPrint");
-        print("RandomAfterLogged " + Mathf.Min(array));
+        print("RandomAfterLogged: " + Mathf.Min(array) + " Index: 1");
     }
 }
