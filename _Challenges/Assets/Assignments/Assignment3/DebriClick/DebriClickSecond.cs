@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class DebriClickSecond : MonoBehaviour
 {
     public GameObject cube;
-    public GameObject debriCubes;
+    public GameObject debriCube;
     public int numberOfDebriCubes;
 
+    /*
     [SerializeField] private float velocity;
     //[SerializeField] private float position;
     [SerializeField] private float gravity;
     [SerializeField] private float acceleration;
-
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +30,16 @@ public class DebriClickSecond : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            PositionDebriCubes();
+            cube.SetActive(false);
+            Debug.Log("cubeClick and set to false");
+
+            for(int i = 0; i < 10; i++)
+            {
+                GameObject go = Instantiate(debriCubes, PositionDebriCubes(), Quaternion.identity)
+                go.GetComponent<Rigidbody>().AddForce(PositionDebriCubes() * 1);
+            }
 
             
-
-            
-            velocity += acceleration;
-            acceleration = gravity;
         }
     }
 
@@ -45,6 +51,12 @@ public class DebriClickSecond : MonoBehaviour
 
         return new Vector3(xPos, yPos, zPos);
     }
+
+    /*
+        position += velocity;
+        velocity += acceleration;
+        acceleration = gravity;
+        */
 
 
 }

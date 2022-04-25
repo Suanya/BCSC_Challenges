@@ -36,13 +36,13 @@ public class DebriClick : MonoBehaviour
             cube.SetActive(false);
             Debug.Log("cubeClick and set to false");
 
-            PositionDebriCubes();
-            Debug.Log("DebrisPosition");
+            // PositionDebriCubes();
+            // Debug.Log("DebrisPosition");
 
             InstantiateDebriCubes();
             Debug.Log("DebrisGO");
 
-            DebriExpolsion();
+            //DebriExpolsion();
         }
     }
  
@@ -54,7 +54,8 @@ public class DebriClick : MonoBehaviour
 
         return new Vector3(xPos, yPos, zPos);
     }
-    
+
+    /*
     private void DebriExpolsion()
     {
         float xPos = Random.Range(0.90f, -0.90f);
@@ -63,6 +64,7 @@ public class DebriClick : MonoBehaviour
 
         transform.position = new Vector3(xPos, yPos, zPos);
     }
+    */
 
     private void InstantiateDebriCubes()
     {

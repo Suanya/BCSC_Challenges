@@ -550,10 +550,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677486696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111a1587c70b743708e6edf259983034, type: 3}
+  m_Script: {fileID: 11500000, guid: f5a06449e8ac5459a862b0056f5cd81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1677486696}
-  debriCubes: {fileID: 2570751296017493393, guid: 4901c37ed428d49fe81e7846e8d9d7e6,
+  debriCube: {fileID: 2570751296017493393, guid: 4901c37ed428d49fe81e7846e8d9d7e6,
     type: 3}
-  numberOfDebriCubes: 50
+  numberOfDebriCubes: 10
