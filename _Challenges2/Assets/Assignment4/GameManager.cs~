@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using System.IO;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager s_instance;
+
+    [SerializeField] private TextMeshProUGUI nameHeaderText;
+    [SerializeField] private TextMeshProUGUI ageHeaderText;
+    [SerializeField] private TextMeshProUGUI cityHeaderText;
+    [SerializeField] private TextMeshProUGUI weightHeaderText;
+
+    private string nameInput;
+    private int ageInput;
+    private string cityInput;
+    private int weighInput;
+
+
+
+
+}
