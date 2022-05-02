@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
-using System.Text.RegularExpressions;
 
-public class TestPlayerPrefs : MonoBehaviour
+/// <summary>
+/// * allow multiple users to save their data:
+/// * Serialize the data to JSON and save it to a file
+/// * Create a new scene that only displays the info of a selected user entry and a return button.
+/// * Add buttons on the sign-up page to visualize each user's info.
+/// </summary>
+
+public class JsonTest : MonoBehaviour
 {
+
     // values 
     public string nameInput;
     public int ageInput;
@@ -35,6 +40,7 @@ public class TestPlayerPrefs : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt(WeightKey).ToString());
     }
 }
+
 
 // didn't work out
 /*
