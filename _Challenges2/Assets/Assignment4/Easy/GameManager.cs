@@ -14,17 +14,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI weightHeaderText;
 
     // values which want to be saved (noBool!)
-    private string nameInput;
+    private string nameInput = "nameInput";
     private int ageInput;
     private string cityInput;
     private int weighInput;
 
     // key which adresses the data being saved -> if you're looking for value, you use the key
-    private string nameKey;
+    string nameKey = "nameInput";
     private int ageKey;
     private string cityKey;
     private int weighKey;
 
+    /*
     private void Awake()
     {
         if(s_instance == null)
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
             AddInput();
         }
     }
+    */
 
 
     private void WelcomeAction()

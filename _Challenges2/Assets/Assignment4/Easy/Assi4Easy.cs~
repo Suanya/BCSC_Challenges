@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+/// <summary>
+/// * create a new project with a sign-up
+/// * The page should ask: Name, Age, City, Weight
+/// * use PlayerPrefabs to store data
+/// </summary>
+
+public class Assi4Easy : MonoBehaviour
+{
+    // Input fields -> ability to take playerInformation and use it
+    [SerializeField] private GameObject nameText;
+
+    // Values -> Information we want -> individual to the player
+    [SerializeField] private TextMeshProUGUI nameInput;
+
+    // Key -> storeAdress/Information we want
+    private string m_name; // value of the key (not yet)
+    private const string key_name = "NameKey"; // CONST -> unchangeable
+
+    private void Awake()
+    {
+        // check if key exists already and if so, take it and show it
+        m_name = PlayerPrefs.GetString(key_name);
+        nameInput.text = m_name.ToString();
+        
+    }
+
+    private void OnApplicationQuit()
+    {
+        // save playerInformation for next time
+        PlayerPrefs.SetString(key_name, nameInput.text);
+
+    }
+}

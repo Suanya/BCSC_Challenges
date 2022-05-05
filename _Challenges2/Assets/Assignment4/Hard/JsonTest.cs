@@ -13,6 +13,7 @@ using TMPro;
 
 public class JsonTest : MonoBehaviour
 {
+    
     public static JsonTest instance;
 
     bool isGameActive;
@@ -26,6 +27,7 @@ public class JsonTest : MonoBehaviour
 
     private void Awake()
     {
+        /*
         isGameActive = true;
 
         if(instance == null)
@@ -38,9 +40,9 @@ public class JsonTest : MonoBehaviour
             string json = File.ReadAllText(Application.dataPath + "/Save.Data.json");
             SaveData data = JsonUtility.FromJson<SaveData>(json);
         }
-            
+         */   
     }
 
-
+    
 
 }
