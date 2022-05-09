@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 
-public class GameManager : MonoBehaviour
+public class GameManagerXXX : MonoBehaviour
 {
-    public static GameManager s_instance;
+    public static GameManagerXXX s_instance;
 
     [SerializeField] private TextMeshProUGUI nameHeaderText;
     [SerializeField] private TextMeshProUGUI ageHeaderText;
