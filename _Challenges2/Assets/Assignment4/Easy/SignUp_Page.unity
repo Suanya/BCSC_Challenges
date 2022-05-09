@@ -2862,12 +2862,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1973955350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc50331311174f44b28b350af38515d, type: 3}
+  m_Script: {fileID: 11500000, guid: 30fcf9283e1cd41ee9dff3c36168d45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameInput: {fileID: 1021756854}
-  ageInput: {fileID: 1560127850}
-  cityInput: {fileID: 971429909}
+  ageInput: {fileID: 971429909}
+  cityInput: {fileID: 1560127850}
   weightInput: {fileID: 1660730170}
 --- !u!1 &2138677391
 GameObject:
@@ -3394,8 +3394,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1973955352}
-        m_TargetAssemblyTypeName: Assi4Easy, Assembly-CSharp
-        m_MethodName: UpdateValues
+        m_TargetAssemblyTypeName: Assi4Hard, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
