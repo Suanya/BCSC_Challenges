@@ -89,10 +89,11 @@ public class Assi4Hard : MonoBehaviour
     {
         if(m_name != nameInput.text)
         {
+            Debug.Log("SaveHardData.json");
             SaveData data = new SaveData();
             data.nameText = nameInput.ToString();
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "SaveHardData.json", json);
+            File.WriteAllText(Application.dataPath + "/SaveHardData.json", json);
             PlayerPrefs.SetString(key_name, nameInput.text);
         }
         if (m_age != ageInput.text)
@@ -100,7 +101,7 @@ public class Assi4Hard : MonoBehaviour
             SaveData data = new SaveData();
             data.ageText = ageInput.ToString();
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "SaveHardData.json", json);
+            File.WriteAllText(Application.dataPath + "/SaveHardData.json", json);
             PlayerPrefs.SetString(key_age, ageInput.text);
         }
         if (m_city != cityInput.text)
@@ -108,7 +109,7 @@ public class Assi4Hard : MonoBehaviour
             SaveData data = new SaveData();
             data.cityText = cityInput.ToString();
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "SaveHardData.json", json);
+            File.WriteAllText(Application.dataPath + "/SaveHardData.json", json);
             PlayerPrefs.SetString(key_city, cityInput.text);
         }
         if (m_weight != weightInput.text)
@@ -116,7 +117,7 @@ public class Assi4Hard : MonoBehaviour
             SaveData data = new SaveData();
             data.weightText = weightInput.ToString();
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "SaveHardData.json", json);
+            File.WriteAllText(Application.dataPath + "/SaveHardData.json", json);
             PlayerPrefs.SetString(key_weight, weightInput.text);
         }
 
