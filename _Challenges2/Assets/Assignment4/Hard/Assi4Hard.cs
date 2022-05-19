@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 
+
 /// <summary>
 /// * Serialize the data to JSON and save it to a file
 /// * Create a new scene that only displays the info of a selected user entry and a returnBtn
@@ -25,6 +26,13 @@ public class Assi4Hard : MonoBehaviour
     [SerializeField] private TMP_InputField ageInput;
     [SerializeField] private TMP_InputField cityInput;
     [SerializeField] private TMP_InputField weightInput;
+
+    /*
+    [SerializeField] private TMP_InputField nameInputPupil;
+    [SerializeField] private TMP_InputField ageInputPupil;
+    [SerializeField] private TMP_InputField cityInputPupil;
+    [SerializeField] private TMP_InputField weightInputPupil;
+    */
 
     // Key
     private string m_name; // value of the key (not yet) -> emptyBox
@@ -119,10 +127,7 @@ public class Assi4Hard : MonoBehaviour
             string json = JsonUtility.ToJson(data);
             File.WriteAllText(Application.dataPath + "/SaveHardData.json", json);
             PlayerPrefs.SetString(key_weight, weightInput.text);
-        }
-
-        
-        
+        }      
     }
     
 }

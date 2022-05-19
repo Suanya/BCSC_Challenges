@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assignment4/Easy/SignUp_Page.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Assignment4/Hard/Tandem.unity
+    guid: 7b21a3c9338814c7d8d370723fb43311
+  - enabled: 1
+    path: Assets/Assignment4/Hard/Congratulation.unity
+    guid: 7dfd150634e5748f8a24938dfaf57076
   m_configObjects: {}
