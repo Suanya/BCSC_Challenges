@@ -7,10 +7,14 @@ public class BomperBomp : MonoBehaviour
     public Material bompMaterial;
     public GameManager gameManager;
 
+    [SerializeField] private AudioSource bomperPop;
+
+
     private void OnCollisionEnter(Collision collision)
     {
         GetComponent<MeshRenderer>().material = bompMaterial;
-        gameManager.coinCounter += 1;
+        gameManager.AddScore(1);
+        bomperPop.Play();
 
         Destroy(this);
        

@@ -10,19 +10,17 @@ public class GameManager : MonoBehaviour
     public GameObject victoryCanvas;
     public GameObject ball;
     
-    [SerializeField] private TextMeshProUGUI coinCounterText;
+    [SerializeField] private TMP_Text coinCounterText;
     public int coinCounter;
     
-
-
-
-
 
     // Update is called once per frame
 
     void Update()
     {
-        if(coinCounter >= 15)
+        
+
+        if(coinCounter >= 20)
         {
             victoryCanvas.SetActive(true);
             Destroy(ball);
