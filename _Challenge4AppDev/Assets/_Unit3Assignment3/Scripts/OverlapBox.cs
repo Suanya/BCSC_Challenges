@@ -13,6 +13,9 @@ public class OverlapBox : MonoBehaviour
     bool m_Started;
     public LayerMask m_LayerMask;
 
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,7 @@ public class OverlapBox : MonoBehaviour
         {
             // output all of the collider names
             Debug.Log("Hit: " + hitColliders[i].name + i);
+            
 
             // increase the number of colliders in the array
             i++;
