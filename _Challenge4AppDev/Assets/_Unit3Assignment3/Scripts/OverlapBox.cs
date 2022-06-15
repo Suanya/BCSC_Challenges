@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Using OverlapBox that creates an invisible BoxCollider that detects multiple collisions with other collider.
 /// The OverlapBox in this case has the same size and position as the GameObject it's attached to.
@@ -13,47 +14,54 @@ public class OverlapBox : MonoBehaviour
     bool m_Started;
     public LayerMask m_LayerMask;
 
-    
+    public List<Collider> m_shakeObjects = new List<Collider>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        // making sure the Gizmos are being drawn while playing
+        //Use this to ensure that the Gizmos are being drawn when in Play Mode.
         m_Started = true;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        MyCollision();
+        MyCollisions();
     }
 
-    private void MyCollision()
+    void MyCollisions()
     {
-        // use the OverlapBox to detect if there are any other colliders within this box area.
-        // use the GameObject's center, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
+        //Use the OverlapBox to detect if there are any other colliders within this box area.
+        //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
         Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMask);
-        int i = 0;
 
-        // check when there is a new collider coming into contact with the box
-        while (i < hitColliders.Length)
-        {
-            // output all of the collider names
-            Debug.Log("Hit: " + hitColliders[i].name + i);
+        m_shakeObjects.Clear();
+        m_shakeObjects = new List<Collider>(hitColliders);
+
             
 
-            // increase the number of colliders in the array
-            i++;
+    }
+
+    //Draw the Box Overlap as a gizmo to show where it currently is testing. Click the Gizmos button to see this
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
+        if (m_Started)
+            //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
+            Gizmos.DrawWireCube(transform.position, transform.localScale);
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.CompareTag("Hammer"))
+        {
+            foreach(Collider obj in m_shakeObjects)
+            {
+                obj.GetComponent<Shaker>().Shake();
+            }
         }
     }
 
-    // Draw the BoxOverlap as a Gizmo to show where it currently is testing. Click the Gizmos button to see this
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        // check that is being run in PlayMode, so it doesn't try to draw this in Editor mode
-        Gizmos.DrawWireCube(transform.position, transform.localScale);
-    }
-
-
 }
+
+
