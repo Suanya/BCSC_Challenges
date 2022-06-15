@@ -14,6 +14,7 @@ public class Shaker : MonoBehaviour
     public void Shake()
     {
         transform.DOShakePosition(m_shakeDuration, m_shakeStrength, m_vibrato, m_shakeRandomness, false, true);
+        Debug.Log("it's shaking");
     }
 
 }
