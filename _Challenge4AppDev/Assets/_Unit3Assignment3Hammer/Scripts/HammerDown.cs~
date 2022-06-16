@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HammerDown : MonoBehaviour
+{
+    [SerializeField] private BoxCollider boxCollider;
+
+    private void OnCollissionEsnter(Collision collission)
+    {
+        if (!collission.gameObject.CompareTag("Hammer"))
+            return;
+        Debug.Log("ball hit");
+
+        var position = transform.position + boxCollider.y / 2 * Vector3.up;
+        var halfExtents = Vector3.Scale(transform.lossyScale, boxCollider.size) / 2;
+        var layerMask = LayerMask.GetMask("ShakeIt");
+        Debug.Log(LayerMask.GetMask());
+    }
+}

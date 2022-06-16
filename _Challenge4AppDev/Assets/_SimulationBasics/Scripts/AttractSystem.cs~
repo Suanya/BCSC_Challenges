@@ -1,0 +1,32 @@
+using Unity.Entities;
+using Unity.Transforms;
+using Unity.Physics;
+using Unity.Mathematics;
+using UnityEngine;
+
+/// <summary>
+/// ComponentSystem iterates over all bodies with PhysicsVelocity on update.
+/// Check the distance to the Translation of the body and see if it is close enough to be affected
+/// </summary>
+
+public class AttractSystem : ComponentSystem
+{
+    public float3 center;
+    public float maxDistanceSqrd;
+    public float strength;
+
+    protected override unsafe void OnUpdate()
+    {
+        Entities.ForEach(ref PhysicsVelocity velocity, ref Translation position, ref Rotation rotation) =>
+        {
+            float3 diff = center - position.Value;
+            float distSqrd = math.lengthsqd(diff);
+
+            if(distSqrd < maxDistanceSqrd)
+            {
+                velocity.Linear += strength * (diff / math.sqrt(distSqrd));
+            }
+        }
+    }
+
+};
